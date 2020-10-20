@@ -1,0 +1,58 @@
+@font-face {
+    font-family: segoeprint;
+    src        : url(../fonts/segoeprint.ttf);
+}
+
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width : 1200px;
+    margin: auto;
+}
+
+header.common {
+    margin-top: 20px;
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    h3 {
+        color    : #C997B2;
+        font-size: 36px;
+    }
+
+    ul {
+        margin-top: 20px;
+        display        : flex;
+        justify-content: flex-end;
+        list-style-type: none;
+
+        li {
+            margin-left: 10px;
+
+            a {
+                display         : inline-block;
+                background-color: white;
+                text-decoration : none;
+                font-size       : 18px;
+                color           : #444;
+                padding         : 5px;
+            }
+        }
+    }
+}
+
+footer.common {
+    text-align      : center;
+    background-color: white;
+
+    img {
+        height: 80px;
+    }
+}

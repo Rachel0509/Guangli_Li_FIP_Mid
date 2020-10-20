@@ -1,0 +1,72 @@
+@keyframes zoomInDown {
+  from {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+.homepage {
+  background-image: url(../images/index/background1.gif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.homepage header {
+  margin-top: 20px;
+}
+.homepage header ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+}
+.homepage header ul li {
+  margin-left: 10px;
+}
+.homepage header ul li a {
+  display: inline-block;
+  background-color: white;
+  text-decoration: none;
+  font-size: 18px;
+  color: #444;
+  padding: 5px;
+}
+.homepage main {
+  flex-grow: 1;
+  color: gray;
+  font-size: 36px;
+  font-family: segoeprint;
+}
+.homepage main .item {
+  animation-name: zoomInDown;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.homepage main .item1 {
+  margin: 0 0 30px 100px;
+  animation-delay: 0;
+}
+.homepage main .item2 {
+  margin: 0 0 20px 60px;
+  animation-delay: 1s;
+}
+.homepage main .item2 img {
+  width: 80px;
+}
+.homepage main .item3 {
+  margin: 0 0 20px 60px;
+  animation-delay: 2s;
+}
+.homepage main .item4 {
+  margin-bottom: 50px;
+  animation-delay: 3s;
+}
+.homepage main .item5 {
+  animation-delay: 4s;
+}
