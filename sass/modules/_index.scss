@@ -13,55 +13,39 @@
 }
 
 .homepage {
-    background-image : url(../images/index/background1.gif);
-    background-repeat: no-repeat;
-    background-size  : 100%;
-    min-height       : 100vh;
-    display          : flex;
-    flex-direction   : column;
 
-    header {
-        margin-top: 20px;
-
-        ul {
-            display        : flex;
-            justify-content: flex-end;
-            list-style-type: none;
-
-            li {
-                margin-left: 10px;
-
-                a {
-                    display         : inline-block;
-                    background-color: white;
-                    text-decoration : none;
-                    font-size       : 18px;
-                    color           : #444;
-                    padding         : 5px;
-                }
-            }
-        }
+    main{
+        padding-top: 64px;
     }
 
-    main {
+    main #index {
+
+        height: calc(100vh - 64px);
+        background-image : url(../images/index/background1.gif);
+        background-repeat: no-repeat;
+        background-size  : 100%;
+        display       : flex;
+        flex-direction: column;
+
+
         flex-grow  : 1;
         color      : gray;
-        font-size  : 36px;
+        font-size  : 32px;
         font-family: segoeprint;
 
-        .item{
-            animation-name: zoomInDown;
-            animation-duration: 1s;
+        .item {
+            animation-name     : zoomInDown;
+            animation-duration : 1s;
             animation-fill-mode: both;
         }
 
         .item1 {
-            margin: 0 0 30px 100px;
+            margin         : 10px 0 10px 100px;
             animation-delay: 0;
         }
 
         .item2 {
-            margin: 0 0 20px 60px;
+            margin         : 0 0 20px 60px;
             animation-delay: 1s;
 
             img {
@@ -70,12 +54,16 @@
         }
 
         .item3 {
-            margin: 0 0 20px 60px;
+            margin         : 0 0 20px 60px;
             animation-delay: 2s;
+
+            img{
+                width: 200px;
+            }
         }
 
         .item4 {
-            margin-bottom: 50px;
+            margin-bottom  : 50px;
             animation-delay: 3s;
         }
 

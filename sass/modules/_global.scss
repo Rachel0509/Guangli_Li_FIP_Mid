@@ -11,38 +11,64 @@
 
 .container {
     width : 1200px;
-    margin: auto;
+    margin: 0 auto;
+}
+
+.title {
+    text-align : center;
+    padding    : 20px 0;
+    font-size  : 40px;
+    font-family: segoeprint;
+    color      : white;
+    font-weight: bolder;
+
+    span {
+        border-bottom: 4px solid white;
+    }
 }
 
 header.common {
-    margin-top: 20px;
+    background-color: #1B242F;
+    position        : fixed;
+    width           : 100%;
+    z-index         : 999;
+    border-bottom   : 3px solid #04c2c9;
 
-    nav{
-        display: flex;
+    nav {
+        display        : flex;
         justify-content: space-between;
     }
 
-    h3 {
-        color    : #C997B2;
-        font-size: 36px;
+    img {
+        height: 60px;
     }
 
     ul {
-        margin-top: 20px;
+        margin-top     : 20px;
         display        : flex;
         justify-content: flex-end;
         list-style-type: none;
 
         li {
-            margin-left: 10px;
+            margin: 0 20px;
+
+            &.active {
+                a {
+                    color: #e31b6d;
+                }
+            }
 
             a {
-                display         : inline-block;
-                background-color: white;
-                text-decoration : none;
-                font-size       : 18px;
-                color           : #444;
-                padding         : 5px;
+                display        : inline-block;
+                text-decoration: none;
+                font-size      : 18px;
+                color          : white;
+                padding        : 5px;
+                transition     : all 0.5s;
+
+                &:hover {
+                    color: #e31b6d;
+                }
             }
         }
     }
