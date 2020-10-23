@@ -9,18 +9,32 @@
 }
 .container {
   width: 1200px;
-  margin: auto;
+  margin: 0 auto;
+}
+.title {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 40px;
+  font-family: segoeprint;
+  color: white;
+  font-weight: bolder;
+}
+.title span {
+  border-bottom: 4px solid white;
 }
 header.common {
-  margin-top: 20px;
+  background-color: #1B242F;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  border-bottom: 3px solid #04c2c9;
 }
 header.common nav {
   display: flex;
   justify-content: space-between;
 }
-header.common h3 {
-  color: #C997B2;
-  font-size: 36px;
+header.common img {
+  height: 60px;
 }
 header.common ul {
   margin-top: 20px;
@@ -29,15 +43,21 @@ header.common ul {
   list-style-type: none;
 }
 header.common ul li {
-  margin-left: 10px;
+  margin: 0 20px;
+}
+header.common ul li.active a {
+  color: #e31b6d;
 }
 header.common ul li a {
   display: inline-block;
-  background-color: white;
   text-decoration: none;
   font-size: 18px;
-  color: #444;
+  color: white;
   padding: 5px;
+  transition: all 0.5s;
+}
+header.common ul li a:hover {
+  color: #e31b6d;
 }
 footer.common {
   text-align: center;
@@ -58,99 +78,79 @@ footer.common img {
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
   }
 }
-.homepage {
+.homepage main {
+  padding-top: 64px;
+}
+.homepage main #index {
+  height: calc(100vh - 64px);
   background-image: url(../images/index/background1.gif);
   background-repeat: no-repeat;
   background-size: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-.homepage header {
-  margin-top: 20px;
-}
-.homepage header ul {
-  display: flex;
-  justify-content: flex-end;
-  list-style-type: none;
-}
-.homepage header ul li {
-  margin-left: 10px;
-}
-.homepage header ul li a {
-  display: inline-block;
-  background-color: white;
-  text-decoration: none;
-  font-size: 18px;
-  color: #444;
-  padding: 5px;
-}
-.homepage main {
   flex-grow: 1;
   color: gray;
-  font-size: 36px;
+  font-size: 32px;
   font-family: segoeprint;
 }
-.homepage main .item {
+.homepage main #index .item {
   animation-name: zoomInDown;
   animation-duration: 1s;
   animation-fill-mode: both;
 }
-.homepage main .item1 {
-  margin: 0 0 30px 100px;
+.homepage main #index .item1 {
+  margin: 10px 0 10px 100px;
   animation-delay: 0;
 }
-.homepage main .item2 {
+.homepage main #index .item2 {
   margin: 0 0 20px 60px;
   animation-delay: 1s;
 }
-.homepage main .item2 img {
+.homepage main #index .item2 img {
   width: 80px;
 }
-.homepage main .item3 {
+.homepage main #index .item3 {
   margin: 0 0 20px 60px;
   animation-delay: 2s;
 }
-.homepage main .item4 {
+.homepage main #index .item3 img {
+  width: 200px;
+}
+.homepage main #index .item4 {
   margin-bottom: 50px;
   animation-delay: 3s;
 }
-.homepage main .item5 {
+.homepage main #index .item5 {
   animation-delay: 4s;
 }
-.gallery {
-  background-color: #635F5F;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.homepage main #gallery {
+  padding: 60px 0;
+  background-color: #1B242F;
 }
-.gallery main {
-  flex-grow: 1;
-}
-.gallery main h1 {
+.homepage main #gallery h1 {
   font-weight: normal;
   font-size: 36px;
   font-family: segoeprint;
   text-align: center;
   color: #C997B2;
-  margin: 30px 0;
+  padding: 30px 0;
 }
-.gallery main .carousel .case_box {
+.homepage main #gallery .carousel .case_box {
   position: relative;
   height: 800px;
   overflow: hidden;
 }
-.gallery main .carousel .case_box .prev {
+.homepage main #gallery .carousel .case_box .prev {
   text-indent: -9999px;
   background: url(../images/gallery/previous.png) no-repeat;
   left: 20px;
 }
-.gallery main .carousel .case_box .next {
+.homepage main #gallery .carousel .case_box .next {
   background: url(../images/gallery/next.png) no-repeat;
   top: 40%;
   right: 20px;
 }
-.gallery main .carousel .case_box p {
+.homepage main #gallery .carousel .case_box p {
   z-index: 2;
   position: absolute;
   text-indent: -9999px;
@@ -159,23 +159,23 @@ footer.common img {
   top: 40%;
   cursor: pointer;
 }
-.gallery main .carousel .case_box ul {
+.homepage main #gallery .carousel .case_box ul {
   position: absolute;
   height: 800px;
   overflow: hidden;
   top: 0px;
   left: 0px;
 }
-.gallery main .carousel .case_box ul li {
+.homepage main #gallery .carousel .case_box ul li {
   float: left;
   height: 800px;
   width: 100vw;
 }
-.gallery main .carousel .case_box ul li img {
+.homepage main #gallery .carousel .case_box ul li img {
   width: 100%;
   height: 100%;
 }
-.gallery main .carousel .case_box ol {
+.homepage main #gallery .carousel .case_box ol {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -183,7 +183,7 @@ footer.common img {
   height: 12px;
   z-index: 99;
 }
-.gallery main .carousel .case_box ol li {
+.homepage main #gallery .carousel .case_box ol li {
   float: left;
   margin: 0 4px;
   display: inline;
@@ -194,67 +194,64 @@ footer.common img {
   overflow: hidden;
   cursor: pointer;
 }
-.gallery main .carousel .case_box ol li.active {
+.homepage main #gallery .carousel .case_box ol li.active {
   background-position: 0 -12px;
 }
-.contact {
-  background-color: #635F5F;
+.homepage main #contact {
+  background-color: #1B242F;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
-.contact main {
-  flex-grow: 1;
+.homepage main #contact .container {
   display: flex;
-  margin: 30px auto 20px;
+  justify-content: center;
+  padding: 60px 0;
 }
-.contact main .left {
+.homepage main #contact .left {
   margin-top: 60px;
   margin-right: 60px;
 }
-.contact main .left img {
+.homepage main #contact .left img {
   border-radius: 100%;
 }
-.contact main .right {
+.homepage main #contact .right {
   color: #C997B2;
-  font-size: 36px;
+  font-size: 28px;
 }
-.contact main .right h2 {
+.homepage main #contact .right h2 {
   font-family: segoeprint;
   margin-bottom: 50px;
 }
-.contact main .right form input[type=text] {
+.homepage main #contact .right form input[type=text] {
   width: 40%;
   line-height: 50px;
   padding-left: 10px;
   margin-bottom: 20px;
-  background-color: #928181;
   border: none;
 }
-.contact main .right form input[type=text]::-webkit-input-placeholder {
+.homepage main #contact .right form input[type=text]::-webkit-input-placeholder {
   color: #C997B2;
   font-size: 30px;
 }
-.contact main .right form textarea {
+.homepage main #contact .right form textarea {
   width: calc(80% + 10px);
   padding-left: 10px;
-  background-color: #928181;
   border: none;
 }
-.contact main .right form textarea::-webkit-input-placeholder {
+.homepage main #contact .right form textarea::-webkit-input-placeholder {
   color: #C997B2;
   font-size: 30px;
   font-weight: bold;
 }
-.contact main .right form input[type=submit] {
+.homepage main #contact .right form input[type=submit] {
   margin-top: 20px;
   color: #C997B2;
   font-size: 30px;
   padding: 10px;
   background-color: #6A4A4A;
+  border-radius: 6px;
   border: none;
 }
-.contact .add {
+.homepage .add {
   background-color: #C6C5C5;
   color: #967E98;
   text-align: center;
@@ -273,11 +270,41 @@ footer.common img {
   text-align: center;
 }
 .thanks .inner h1 {
-  padding: 120px 0 320px;
+  padding: 120px 0 280px;
   font-size: 50px;
   font-weight: normal;
 }
 .thanks .inner .text p {
   font-size: 24px;
   line-height: 1.8;
+}
+.thanks .inner a {
+  display: inline-block;
+  margin-top: 30px;
+  background-color: dodgerblue;
+  padding: 10px;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.detail .big-img {
+  text-align: center;
+  padding: 60px 0;
+}
+.detail .big-img img {
+  max-width: 60%;
+}
+.detail .imgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.detail .imgs .img {
+  width: 280px;
+  height: 210px;
+  margin-bottom: 20px;
+}
+.detail .imgs .img img {
+  width: 100%;
+  height: 100%;
 }
